@@ -1,9 +1,11 @@
 const path = require('path'); // node.js 경로 조작
+const webpack = require('webpack');
+const RefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 module.exports = {
     name: 'word-relay-setting',
     mode: 'development', // 실서비스에서는 production으로 교체
-    devtool: 'eval',
+    devtool: 'eval', // production -> hidden-source-map
     resolve: {
         extensions: ['.js', '.jsx']
     },
@@ -22,16 +24,44 @@ module.exports = {
             loader: 'babel-loader', // babel-loader를 적용
             options: {
                 // 다운 받은 env와 react를 넣어줌
-                presets: ['@babel/preset-env', '@babel/preset-react'],
+                // presets: ['@babel/preset-env', '@babel/preset-react'],
+                // preset-env : plugin들의 모음
+                // preset-env에도 따로 옵션을 적용할 수 있다.
+                // 아래와 같이 하나의 배열요소로 설정하고 옵션들을 객체로 전달한다.
+                // docs : https://babeljs.io/docs/en/babel-preset-env
+                // 참고 : https://github.com/browserslist/browserslist
+                presets: [
+                    ['@babel/preset-env', {
+                        targets: {
+                            browsers: ['> 5% in KR'], // KR에서 5%이상의 점유율을 가지는 브라우저, chrome 최근 2개버전
+                        },
+                        debug: true // 개발용 옵션
+                    }],
+                    '@babel/preset-react'
+                ],
+                plugins: [
+                    'react-refresh/babel'
+                ],
                 // 에러가 날경우 에러메세지를 보고 따라하면 된다.
                 // '@babel/plugin-proposal-class-properties'가 필요할 수 있음
                 // plugins에 이를 추가
                 // plugins : ['@babel/plugin-proposal-class-properties']
             },
-        }],
+        }]
     }, // entry의 파일들을 module을 적용하여 output으로 
+    plugins: [
+        new RefreshWebpackPlugin()
+    ],
     output: {
         path: path.join(__dirname, 'dist'), // __dirname : 현재폴더(webGame의 경로), 'dist' 폴더
-        filename: 'app.js'
+        filename: 'app.js',
+        publicPath: '/dist/',
     }, // 출력 : 최종 js파일
+    devServer: {
+        publicPath: '/dist/',
+        hot: true,
+        port: 8090
+    },
 };
+// webpack docs
+// https://webpack.js.org/concepts/

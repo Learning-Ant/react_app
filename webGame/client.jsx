@@ -2,8 +2,17 @@ const React = require('react');
 const ReactDom = require('react-dom');
 
 const WordRelay = require('./WordRelay');
+import NumberBaseball from './NumberBaseball';
 
-ReactDom.render(<WordRelay />, document.querySelector('#root'));
+ReactDom.render(
+    <>
+        <WordRelay />
+        <br />
+        <br />
+        <NumberBaseball />
+    </>,
+    document.querySelector('#root')
+);
 // jsx는 js문법이 아니다.
 // 그렇기에 추가해주었던 것이 바벨인데, 이런 설정을 webpack에도 설정을 해주어야한다.
 // 이제 바벨을 인스톨해본다.

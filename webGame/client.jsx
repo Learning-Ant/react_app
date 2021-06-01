@@ -4,6 +4,7 @@ const ReactDom = require('react-dom');
 const WordRelay = require('./components/WordRelay');
 import NumberBaseball from './components/NumberBaseball';
 import ResponseCheck from './components/ResponseCheck';
+import RSP from './components/RSP';
 
 ReactDom.render(
     <>
@@ -14,6 +15,9 @@ ReactDom.render(
         <br />
         <br />
         <ResponseCheck />
+        <br />
+        <br />
+        <RSP />
     </>,
     document.querySelector('#root')
 );

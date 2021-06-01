@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import Try from './components/Try';
+import React, { Component, createRef } from 'react';
+import Try from './Try';
 
 // 4자리 난수 생성
 function getNumbers() {
@@ -26,6 +26,7 @@ class NumberBaseball extends Component {
         e.preventDefault();
         if (value === answer.join('')) {
             this.setState((prevState) => {
+                // High-order function
                 return {
                     result: '홈런',
                     // React의 Rendering은 state가 변경되어야 실행된다.
@@ -70,11 +71,18 @@ class NumberBaseball extends Component {
                 });
             }
         }
+        this.inputRef.current.focus();
     };
 
     onChangeInput = (e) => {
         this.setState({ value: e.target.value })
     };
+
+    inputRef = createRef();
+    // onInputRef = (c) => {
+    //     this.inputRef = c;
+    //     createRef를 쓰지않는 방법은 미세한 조정이 가능하다(커스터마이징)
+    // }
 
     render() {
         const { result, value, tries } = this.state;
@@ -82,7 +90,7 @@ class NumberBaseball extends Component {
             <>
                 <h1>{result}</h1>
                 <form onSubmit={this.onSubmitForm}>
-                    <input maxLength={4} value={value} onChange={this.onChangeInput} />
+                    <input ref={this.inputRef} maxLength={4} value={value} onChange={this.onChangeInput} />
                 </form>
                 {/*
                     React에서는 key를 기준으로 Element의 추가, 수정, 삭제를

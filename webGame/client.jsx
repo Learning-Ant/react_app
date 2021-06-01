@@ -1,8 +1,9 @@
 const React = require('react');
 const ReactDom = require('react-dom');
 
-const WordRelay = require('./WordRelay');
-import NumberBaseball from './NumberBaseball';
+const WordRelay = require('./components/WordRelay');
+import NumberBaseball from './components/NumberBaseball';
+import ResponseCheck from './components/ResponseCheck';
 
 ReactDom.render(
     <>
@@ -10,6 +11,9 @@ ReactDom.render(
         <br />
         <br />
         <NumberBaseball />
+        <br />
+        <br />
+        <ResponseCheck />
     </>,
     document.querySelector('#root')
 );

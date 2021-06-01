@@ -7,7 +7,7 @@ module.exports = {
     mode: 'development', // 실서비스에서는 production으로 교체
     devtool: 'eval', // production -> hidden-source-map
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '.css']
     },
     // 중요
     entry: {

@@ -5,6 +5,7 @@ const WordRelay = require('./components/WordRelay');
 import NumberBaseball from './components/NumberBaseball';
 import ResponseCheck from './components/ResponseCheck';
 import RSP from './components/RSP';
+import Lotto from './components/Lotto';
 
 ReactDom.render(
     <>
@@ -18,6 +19,9 @@ ReactDom.render(
         <br />
         <br />
         <RSP />
+        <br />
+        <br />
+        <Lotto />
     </>,
     document.querySelector('#root')
 );

@@ -26,7 +26,7 @@ const computerChoice = (imgCoord) => {
 class RSP extends Component {
     state = {
         result: '',
-        imgCoord: '0',
+        imgCoord: rspCoord.바위,
         score: 0,
     };
 

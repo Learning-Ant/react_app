@@ -6,22 +6,34 @@ import NumberBaseball from './components/NumberBaseball';
 import ResponseCheck from './components/ResponseCheck';
 import RSP from './components/RSP';
 import Lotto from './components/Lotto';
+import TicTacToe from './components/TicTacToe';
+// import Lotto_hooks from './components/Lotto_hooks';
 
 ReactDom.render(
     <>
+        <h1>끝말잇기</h1>
         <WordRelay />
         <br />
         <br />
+        <h1>숫자야구</h1>
         <NumberBaseball />
         <br />
         <br />
+        <h1>반응속도 체크</h1>
         <ResponseCheck />
         <br />
         <br />
+        <h1>가위바위보</h1>
         <RSP />
         <br />
         <br />
+        <h1>로또번호 생성기</h1>
         <Lotto />
+        {/* <Lotto_hooks /> */}
+        <br />
+        <br />
+        <h1>Tic Tac Toe</h1>
+        <TicTacToe />
     </>,
     document.querySelector('#root')
 );

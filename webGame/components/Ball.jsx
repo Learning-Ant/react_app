@@ -8,9 +8,9 @@ class Ball extends PureComponent {
             background = 'red';
         } else if (number <= 20) {
             background = 'orange';
-        } else if (number <= 20) {
+        } else if (number <= 30) {
             background = 'yellow';
-        } else if (number <= 20) {
+        } else if (number <= 40) {
             background = 'blue';
         } else {
             background = 'green';

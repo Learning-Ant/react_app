@@ -6,8 +6,9 @@ import NumberBaseball from './components/NumberBaseball';
 import ResponseCheck from './components/ResponseCheck';
 import RSP from './components/RSP';
 import Lotto from './components/Lotto';
-import TicTacToe from './components/TicTacToe';
+// import TicTacToe from './components/TicTacToe';
 // import Lotto_hooks from './components/Lotto_hooks';
+import MineSearch from './components/MineSearch/MineSearch';
 
 ReactDom.render(
     <>
@@ -33,7 +34,9 @@ ReactDom.render(
         <br />
         <br />
         <h1>Tic Tac Toe</h1>
-        <TicTacToe />
+        {/* <TicTacToe /> */}
+        <h1>지뢰찾기</h1>
+        <MineSearch />
     </>,
     document.querySelector('#root')
 );

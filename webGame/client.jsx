@@ -9,10 +9,11 @@ import Lotto from './components/Lotto';
 // import TicTacToe from './components/TicTacToe';
 // import Lotto_hooks from './components/Lotto_hooks';
 import MineSearch from './components/MineSearch/MineSearch';
+import MineSearch2 from './components/MineSearch/MineSearch2';
 
 ReactDom.render(
     <>
-        <h1>끝말잇기</h1>
+        {/* <h1>끝말잇기</h1>
         <WordRelay />
         <br />
         <br />
@@ -29,14 +30,14 @@ ReactDom.render(
         <br />
         <br />
         <h1>로또번호 생성기</h1>
-        <Lotto />
+        <Lotto /> */}
         {/* <Lotto_hooks /> */}
+        {/* <br />
         <br />
-        <br />
-        <h1>Tic Tac Toe</h1>
+        <h1>Tic Tac Toe</h1> */}
         {/* <TicTacToe /> */}
         <h1>지뢰찾기</h1>
-        <MineSearch />
+        <MineSearch2 />
     </>,
     document.querySelector('#root')
 );
